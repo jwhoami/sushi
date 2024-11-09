@@ -129,6 +129,7 @@ trait Sushi
 
     public function migrate()
     {
+        $this->beforeMigrate();
         $rows = $this->getRows();
         $tableName = $this->getTable();
 
@@ -194,6 +195,11 @@ trait Sushi
     protected function afterMigrate(BluePrint $table)
     {
        //
+    }
+
+    protected function beforeMigrate()
+    {
+        //
     }
 
     public function createTableWithNoData(string $tableName)
